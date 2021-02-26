@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+    <center><h1>Administration</h1><center/>
+    <h3><a href="{{ path('admin_article_create') }}">Créer un article</a></h3>
+	<!-- article one -->
+    <div class="article-one">
+        <div class="container">
+            <div class="row">
+                {% for article in articles %}
+                    <!-- Product card loop -->
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="article">
+                            <div class="image-area">
+                                <img src="{{ asset('uploads/images/' ~ article.image) }}" class="img-responsive"/>
+                            </div>
+                            <div class="image-text d-flex">
+                                <div>
+                                    <h4 class="text-muted">{{ article.title }}</h4>
+                                    <h4 class="text-muted">{{ article.price }} FCFA</h4>
+                                </div>
+                                <div>
+                                    <h4><a href="{{ path('admin_article_update', {id: article.id}) }}">Modifier</a></h4>
+                                    <form action="{{ path('admin_article_delete', {id: article.id}) }}" 
+                                          method="post" class="d-inline-block"
+                                          onsubmit="return confirm('Voulez-vous vraiment supprimer cet élément ?')">
+                                        <input type="hidden" name="_method" value="DELETE" >
+                                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ article.id) }}" >
+                                        <button class="btn btn-danger">Supprimer</button>
+                                    </form>
+                                </div>
+                            </div>                            
+                        </div>
+                    </div>
+                <!-- Product card loop end -->
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Pagination -->
+    <ul class="pagination justify-content-center d-none">
+            <li class="page-item">
+                <a class="page-link" href="index.html">Première page</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="index.html">Précédent</a>
+            </li>
+
+
+            <!-- Page number loop -->
+            <li class="page-item">
+                <a class="page-link" href="index.html">1</a>
+            </li>
+            
+            <li class="page-item">
+                <a class="page-link" href="index.html">2</a>
+            </li>
+            
+            <li class="page-item">
+                <a class="page-link" href="index.html">3</a>
+            </li>
+            <!-- Page number loop end -->
+
+
+            <li class="page-item">
+                <a class="page-link" href="index.html">Suivant</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="index.html">Dernière page</a>
+            </li>
+    </ul>
+    <!-- Pagination end -->
+
+{% endblock %}

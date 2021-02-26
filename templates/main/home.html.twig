@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<!-- article one -->
+    <div class="article-one">
+        <div class="container">
+            <div class="row">
+                {% for article in articles %}
+                    <!-- Product card loop -->
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="article">
+                            <div class="image-area">
+                                <img src="{{ asset('uploads/images/' ~ article.image) }}" class="img-responsive"/>
+                            </div>
+                            <div class="image-text">
+                                <h4><a href="produit.html">Audio</a></h4>
+                                <h5 class="text-muted">{{ article.price }} FCFA</h5>
+                            </div>                            
+                        </div>
+                    </div>
+                <!-- Product card loop end -->
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Pagination -->
+    <ul class="pagination justify-content-center d-none">
+            <li class="page-item">
+                <a class="page-link" href="index.html">Première page</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="index.html">Précédent</a>
+            </li>
+
+
+            <!-- Page number loop -->
+            <li class="page-item">
+                <a class="page-link" href="index.html">1</a>
+            </li>
+            
+            <li class="page-item">
+                <a class="page-link" href="index.html">2</a>
+            </li>
+            
+            <li class="page-item">
+                <a class="page-link" href="index.html">3</a>
+            </li>
+            <!-- Page number loop end -->
+
+
+            <li class="page-item">
+                <a class="page-link" href="index.html">Suivant</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="index.html">Dernière page</a>
+            </li>
+    </ul>
+    <!-- Pagination end -->
+
+{% endblock %}

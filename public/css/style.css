@@ -1,0 +1,304 @@
+/*===== GENERAL =====*/
+.space{
+  margin-top: 15%;
+}
+.button-style{
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: white;
+  letter-spacing: .1rem;
+  background-color: rgb(254, 0, 116);
+}
+.button-style:hover{
+  color: rgb(254, 0, 116);
+  background-color: #f3f0ff;
+  border: 1px solid rgb(254, 0, 116)!important;
+}
+
+/*===== BODY =====*/
+body {
+  overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
+  color: #616971;
+}
+
+/*===== LOGO =====*/
+.logo img{
+  height: 4rem;
+}
+
+/*===== SECOND NAVBAR =====*/
+#subNavigation{
+  /*z-index: 10;*/
+}
+.second-navbar nav{
+  background: #eceff4;/*#0082e6*/
+  height: 85px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  font-size: 1.15rem;
+  font-weight: bold;
+  letter-spacing: .1rem;
+  box-shadow: 0 .5rem .5rem rgba(0, 0, 0, .1);
+}
+.second-navbar nav label.checkbtn{
+  font-size: 30px;
+  color: white;
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+#check{
+  display: none;
+}
+.second-navbar nav ul{
+  list-style-type: none!important;
+  float: right;
+  margin-right: 20px;
+  /*background: #0082e6;*/
+}
+.second-navbar nav ul li{
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+.second-navbar nav ul a{
+  text-decoration: none!important;
+  color: #fe0074;
+  font-size: 17px;
+  text-transform: uppercase;
+  padding: 7px 13px;
+  border-radius: 7px;
+}
+.second-navbar nav ul a:hover,
+.second-navbar nav ul button:hover{
+  background-color: rgb(254, 0, 116);/*254,0,116#fe0074;*/
+  color: white;
+  transition: .5s;
+}
+.second-navbar nav ul button{
+  text-decoration: none!important;
+  color: #fe0074;
+  font-size: 17px;
+  text-transform: uppercase;
+  border: none;
+  background-color: transparent;
+}
+.second-navbar label.logo{
+  color: white;
+  font-size: 35px;
+  line-height: 80px;
+  padding: 0 100px;
+  font-weight: bold;
+}
+
+@media (max-width: 952px){
+  .second-navbar label.logo{
+    font-size: 30px;
+    padding-left: 50px;
+  }
+  .second-navbar nav ul a{
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 858px){
+  .second-navbar nav label.checkbtn{
+    display: block;
+  }
+  .second-navbar nav ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+  .second-navbar nav ul li{
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+  .second-navbar nav ul li a{
+    font-size: 20px;
+  }
+  .second-navbar nav ul a:hover{
+    background: none;
+    color: #0082e6;
+  }
+  #check:checked ~ ul{
+    left: 0;
+    z-index: 10;
+  }
+}
+.second-navbar section{
+  background: url('../img/matrix.jpg');
+  background-size: cover;
+  /*height: calc(100vh -80px);*/
+}
+.second-navbar .hero-image{
+  height: 50vh;
+  z-index: 0;
+  margin-bottom: 50px;
+}
+
+/*============= ARTICLE ONE =============*/
+
+.article-one{
+    padding-top: 5%;
+}
+
+.image-area{
+  overflow: hidden;
+  position: relative;
+}
+
+.image-area:hover img{
+    transform: scale(1.2);
+}
+
+.image-area img{
+    height: 300px;
+    transition: all 1s ease 0s;
+    width: 100%;
+}
+
+.image-text{
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.image-text h4{
+    font-size: 30px;
+    font-family: serif;
+}
+
+.image-text h4 a{
+  color: rgb(254, 0, 116);
+}
+
+/*============= PAGINATION =============*/
+.pagination li a{
+  color: black;
+}
+
+.pagination li a:hover{
+  color: black;
+}
+
+/*============= FOOTER =============*/
+
+footer{
+  background-color: #383838;
+  padding: 1rem 2rem 3rem;
+}
+footer img{
+  height: 3.5rem;
+  padding: 1.5rem auto;
+}
+footer p, 
+footer a,
+.socket a{
+  color: white;
+  text-decoration: none;
+}
+ul.social{
+  list-style-type: none;
+  display: flex;
+  max-width: 16rem;
+  margin: 0 auto;
+  padding: 0;
+}
+ul.social li{
+  margin: 0 auto;
+}
+footer .svg-inline--fa{
+  font-size: 2.3rem;
+}
+footer .svg-inline--fa:hover{
+  color: #68a0d2;
+}
+
+/*============= SOCKET =============*/
+
+.socket {
+  background-color: #222222;
+  border-top: .1rem solid #4981b3;
+}
+
+/*============= MEDIA QUERIES =============*/
+
+/* Devices under 1199px (xl) */
+@media (max-width: 1199.98px) {
+}
+
+/* Devices under 992px (lg) */
+@media (max-width: 991.98px) {
+}
+
+/* Devices under 768px (md) */
+@media (max-width: 767.98px) {
+
+}
+
+
+/*============ BOOTSTRAP BREAK POINTS:
+
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large (lg) devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+
+=============*/
+
+/*-- Bootstrap Mobile Gutter Fix --*/
+.row, .container-fluid {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
+/*-- Fixed Background Image --*/
+.fixed-background {
+  position: relative;
+  width: 100%;
+  z-index: 1000!important;
+}
+.fixed-wrap {
+  clip: rect(0, auto, auto, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -999 !important;
+}
+.fixed {
+  z-index: -999!important;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  will-change: transform;
+}
